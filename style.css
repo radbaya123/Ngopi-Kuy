@@ -1,0 +1,150 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: darkslategray;
+}
+
+.container{
+  position: relative;
+  top: 50px;
+}
+
+.cup{
+  position: relative;
+  width: 240px;
+  height: 260px;
+  background: linear-gradient(to right, white, rgb(170, 164, 164)) ;
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+}
+
+.top{
+  position: absolute;
+  top: -30px;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: linear-gradient(to right, white, rgb(170, 164, 164));
+  border-radius: 50%;
+}
+
+.circle{
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  height: 50px;
+  width: calc(100% - 20px);
+  /* width: 260px; */
+  /* background: rgb(63, 56, 56) ; */
+  background: linear-gradient(to left, #c4c4c4, lightgray);
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.kopi{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(70, 51, 46);
+  border-radius: 50%;
+}
+
+.handle{
+  position: absolute;
+  right: -73px;
+  top: 23px;
+  width: 160px;
+  height: 180px;
+  border: 20px solid rgb(170, 164, 164);
+  border-left: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-radius: 50%;
+  transform: rotate(44deg);
+}
+
+.plate{
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 200px;
+  background: linear-gradient(to right, white, rgb(170, 164, 164));
+  border-radius: 50%;
+  box-shadow: 0 25px 25px rgba(0, 0, 0, 0.15);
+}
+
+.plate::before{
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  /* background: linear-gradient(to left rgba(0,0,0,0.2) 25%, transparent, transparent); */
+  background: linear-gradient(to right, rgb(252, 249, 249), rgb(172, 172, 172));
+}
+
+.plate::after{
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  border-radius: 50%;
+  background: radial-gradient(rgba(0,0,0,0.2) 25%, transparent, transparent);
+}
+
+.uap{
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 20px;
+}
+.uap span{
+  position: relative;
+  bottom: 50px;
+  display: block;
+  margin: 0 2px 20px;
+  min-width: 6px;
+  height: 120px;
+  background: whitesmoke;
+  border-radius: 50%;
+  animation: anim 5s linear infinite;
+  opacity: 0;
+  filter: blur(8px);
+  animation-delay: calc(var(--i) * .25s);
+}
+
+@keyframes anim {
+  0%{
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  50%{
+    transform: translateY(-150px) scaleX(5);
+    opacity: 0;
+  }
+  90%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-300px) scaleX(10);
+  }
+}
